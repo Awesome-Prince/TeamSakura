@@ -2,10 +2,10 @@
 Syntax: .ping"""
 
 import time
+
 from pyrogram import Client, filters
-from info import (
-    COMMAND_HAND_LER
-)
+
+from info import COMMAND_HAND_LER
 from plugins.helper_functions.cust_p_filters import f_onw_fliter
 
 # -- Constants -- #
@@ -14,10 +14,7 @@ HELP = "CAACAgUAAxkBAAEBTsthlWY_Pte1RC4yhz3nD1utGagSSwAC0gIAAsaPcVUSPJS_m8rS5h4E
 # -- Constants End -- #
 
 
-@Client.on_message(
-    filters.command(["alive", "start"], COMMAND_HAND_LER) &
-    f_onw_fliter
-)
+@Client.on_message(filters.command(["alive", "start"], COMMAND_HAND_LER) & f_onw_fliter)
 async def check_alive(_, message):
     await message.reply_text(ALIVE)
 

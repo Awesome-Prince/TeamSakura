@@ -83,7 +83,7 @@ Google's TTS engine by way of the gTTS library
 
 𝖬𝖺𝖽𝖾 𝖻𝗒 @SakuraBotUpdates ❤️
 """
-    PING_TXT= """<b>𝖯𝗂𝗇𝗀:</b>
+    PING_TXT = """<b>𝖯𝗂𝗇𝗀:</b>
 
 𝖧𝖾𝗅𝗉𝗌 𝗒𝗈𝗎 𝗍𝗈 𝗄𝗇𝗈𝗐 𝗒𝗈𝗎𝗋 𝗉𝗂𝗇𝗀, 𝖨𝗇 𝗌𝗁𝗈𝗋𝗍-𝗍𝖾𝗋𝗆𝗌 '𝗆𝗌'.
 
@@ -109,7 +109,7 @@ Google's TTS engine by way of the gTTS library
 
 𝖬𝖺𝖽𝖾 𝖻𝗒 @SakuraBotUpdates ❤️
 """
-    FUN_TXT ="""<b>𝖥𝗎𝗇 𝖬𝗈𝖽𝗎𝗅𝖾𝗌</b> 
+    FUN_TXT = """<b>𝖥𝗎𝗇 𝖬𝗈𝖽𝗎𝗅𝖾𝗌</b> 
     
 <b>🎲 𝖭𝗈𝗍𝗁𝗂𝗇𝗀 𝗆𝗎𝖼𝗁 𝗃𝗎𝗌𝗍 𝗌𝗈𝗆𝖾 𝖿𝗎𝗇 𝗌𝗍𝗎𝖿𝖿𝗌</b>
 𝗍𝗋𝗒 𝗍𝗁𝖾𝗌𝖾 𝗈𝗎𝗍: 
@@ -120,7 +120,7 @@ Google's TTS engine by way of the gTTS library
 
 𝖬𝖺𝖽𝖾 𝖻𝗒 @SakuraBotUpdates ❤️
 """
-    PURGE_TXT ="""<b>𝖯𝗎𝗋𝗀𝖾</b>
+    PURGE_TXT = """<b>𝖯𝗎𝗋𝗀𝖾</b>
 - 𝖣𝖾𝗅𝖾𝗍𝖾 𝖺 𝗅𝗈𝗍𝗌 𝗈𝖿 𝗆𝖾𝗌𝗌𝖺𝗀𝖾𝗌 𝖿𝗋𝗈𝗆 𝖺 𝗀𝗋𝗈𝗎𝗉!
     
  <b>𝖠𝖽𝗆𝗂𝗇</b> 
@@ -213,7 +213,7 @@ Google's TTS engine by way of the gTTS library
 
 𝖬𝖺𝖽𝖾 𝖻𝗒 @SakuraBotUpdates ❤️
 """
-    FILTER_TXT ="""𝖲𝖾𝗅𝖾𝖼𝗍 𝖺 𝖿𝗂𝗅𝗍𝖾𝗋 𝗍𝗒𝗉𝖾 𝖻𝖾𝗅𝗈𝗐:"""
+    FILTER_TXT = """𝖲𝖾𝗅𝖾𝖼𝗍 𝖺 𝖿𝗂𝗅𝗍𝖾𝗋 𝗍𝗒𝗉𝖾 𝖻𝖾𝗅𝗈𝗐:"""
     PIN_TXT = """<b>𝖯𝖨𝖭:</b>
 𝖠𝗅𝗅 𝗍𝗁𝖾 𝗉𝗂𝗇 𝗋𝖾𝗅𝖺𝗍𝖾𝖽 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌 𝖼𝖺𝗇 𝖻𝖾 𝖿𝗈𝗎𝗇𝖽 𝗁𝖾𝗋𝖾; 𝗄𝖾𝖾𝗉 𝗒𝗈𝗎𝗋 𝖼𝗁𝖺𝗍 𝗎𝗉 𝗍𝗈 𝖽𝖺𝗍𝖾 𝗈𝗇 𝗍𝗁𝖾 𝗅𝖺𝗍𝖾𝗌𝗍 𝗇𝖾𝗐𝗌 𝗐𝗂𝗍𝗁 𝖺 𝗌𝗂𝗆𝗉𝗅𝖾 𝗉𝗂𝗇𝗇𝖾𝖽 𝗆𝖾𝗌𝗌𝖺𝗀𝖾!  
 
@@ -223,7 +223,7 @@ Google's TTS engine by way of the gTTS library
 
 𝖬𝖺𝖽𝖾 𝖻𝗒 @SakuraBotUpdates ❤️
 """
-    TGRAPH_TXT ="""<b>𝖳𝖾𝗅𝖾𝗀𝗋𝖺𝗉𝗁</b>
+    TGRAPH_TXT = """<b>𝖳𝖾𝗅𝖾𝗀𝗋𝖺𝗉𝗁</b>
 𝖣𝗈 𝖺𝗌 𝗒𝗈𝗎 𝗐𝗂𝗌𝗁 𝗐𝗂𝗍𝗁 telegra.ph 𝗆𝗈𝖽𝗎𝗅𝖾!
 <b>𝖴𝗌𝖺𝗀𝖾:</b>
 
@@ -236,7 +236,7 @@ Google's TTS engine by way of the gTTS library
 
 𝖬𝖺𝖽𝖾 𝖡𝗒 @SakuraBotUpdates ❤️
 """
-    IMBD_TXT ="""<b>Search</b>
+    IMBD_TXT = """<b>Search</b>
 - 𝖲𝖾𝖺𝗋𝖼𝗁 𝖿𝗂𝗅𝗆 𝖽𝖾𝗍𝖺𝗂𝗅𝗌 𝗐𝗂𝗍𝗁𝗈𝗎𝗍 𝗅𝖾𝖺𝗏𝗂𝗇𝗀 𝗍𝖾𝗅𝖾𝗀𝗋𝖺𝗆
 - 𝖲𝖾𝖺𝗋𝖼𝗁 𝖺𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝗐𝗂𝗍𝗁𝗈𝗎𝗍 𝗅𝖾𝖺𝗏𝗂𝗇𝗀 𝗍𝖾𝗅𝖾𝗀𝗋𝖺𝗆
 <b>U𝗌𝖺𝗀𝖾:</b>
@@ -245,7 +245,7 @@ Google's TTS engine by way of the gTTS library
 
 𝖬𝖺𝖽𝖾 𝖻𝗒 @SakuraBotUpdates ❤️
 """
-    INFO_TXT ="""<b>𝖨𝗇𝖿𝗈</b>
+    INFO_TXT = """<b>𝖨𝗇𝖿𝗈</b>
 𝖦𝖾𝗍 𝗂𝗇𝖿𝗈𝗋𝗆𝖺𝗍𝗂𝗈𝗇 𝖺𝖻𝗈𝗎𝗍 𝗌𝗈𝗆𝖾𝗍𝗁𝗂𝗇𝗀!
 <b>𝖴𝗌𝖺𝗀𝖾:</b>
 ➥ /id - 𝗀𝖾𝗍 𝗍𝗁𝖾 𝗂𝖽 𝗈𝖿 𝖺 𝗌𝗉𝖾𝖼𝗂𝖿𝖾𝖽 𝗎𝗌𝖾𝗋

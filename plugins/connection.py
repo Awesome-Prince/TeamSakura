@@ -1,10 +1,17 @@
-from pyrogram import filters, Client
+from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from database.connections_mdb import add_connection, all_connections, if_active, delete_connection
+
+from database.connections_mdb import (
+    add_connection,
+    all_connections,
+    delete_connection,
+    if_active,
+)
 from info import ADMINS
 
-@Client.on_message((filters.private | filters.group) & filters.command('connect'))
-async def addconnection(client,message):
+
+@Client.on_message((filters.private | filters.group) & filters.command("connect"))
+async def addconnection(client, message):
     userid = message.from_user.id
     chat_type = message.chat.type
 
@@ -16,7 +23,7 @@ async def addconnection(client,message):
                 "<b>Enter in correct format!</b>\n\n"
                 "<code>/connect groupid</code>\n\n"
                 "<i>Get your Group id by adding this bot to your group and use  <code>/id</code></i>",
-                quote=True
+                quote=True,
             )
             return
 
@@ -30,7 +37,9 @@ async def addconnection(client,message):
             and st.status != "creator"
             and str(userid) not in ADMINS
         ):
-            await message.reply_text("You should be an admin in Given group!", quote=True)
+            await message.reply_text(
+                "You should be an admin in Given group!", quote=True
+            )
             return
     except Exception as e:
         print(e)
@@ -51,34 +60,33 @@ async def addconnection(client,message):
                 await message.reply_text(
                     f"Sucessfully connected to **{title}**\nNow manage your group from my pm !",
                     quote=True,
-                    parse_mode="md"
+                    parse_mode="md",
                 )
                 if chat_type in ["group", "supergroup"]:
                     await client.send_message(
-                        userid,
-                        f"Connected to **{title}** !",
-                        parse_mode="md"
+                        userid, f"Connected to **{title}** !", parse_mode="md"
                     )
             else:
                 await message.reply_text(
-                    "You're already connected to this chat!",
-                    quote=True
+                    "You're already connected to this chat!", quote=True
                 )
         else:
             await message.reply_text("Add me as an admin in group", quote=True)
     except Exception as e:
         print(e)
-        await message.reply_text('Some error occured! Try again later.', quote=True)
+        await message.reply_text("Some error occured! Try again later.", quote=True)
         return
 
 
-@Client.on_message((filters.private | filters.group) & filters.command('disconnect'))
-async def deleteconnection(client,message):
+@Client.on_message((filters.private | filters.group) & filters.command("disconnect"))
+async def deleteconnection(client, message):
     userid = message.from_user.id
     chat_type = message.chat.type
 
     if chat_type == "private":
-        await message.reply_text("Run /connections to view or disconnect from groups!", quote=True)
+        await message.reply_text(
+            "Run /connections to view or disconnect from groups!", quote=True
+        )
 
     elif chat_type in ["group", "supergroup"]:
         group_id = message.chat.id
@@ -93,20 +101,24 @@ async def deleteconnection(client,message):
 
         delcon = await delete_connection(str(userid), str(group_id))
         if delcon:
-            await message.reply_text("Successfully disconnected from this chat", quote=True)
+            await message.reply_text(
+                "Successfully disconnected from this chat", quote=True
+            )
         else:
-            await message.reply_text("This chat isn't connected to me!\nDo /connect to connect.", quote=True)
+            await message.reply_text(
+                "This chat isn't connected to me!\nDo /connect to connect.", quote=True
+            )
 
 
 @Client.on_message(filters.private & filters.command(["connections"]))
-async def connections(client,message):
+async def connections(client, message):
     userid = message.from_user.id
 
     groupids = await all_connections(str(userid))
     if groupids is None:
         await message.reply_text(
             "There are no active connections!! Connect to some groups first.",
-            quote=True
+            quote=True,
         )
         return
     buttons = []
@@ -119,7 +131,8 @@ async def connections(client,message):
             buttons.append(
                 [
                     InlineKeyboardButton(
-                        text=f"{title}{act}", callback_data=f"groupcb:{groupid}:{title}:{act}"
+                        text=f"{title}{act}",
+                        callback_data=f"groupcb:{groupid}:{title}:{act}",
                     )
                 ]
             )
@@ -129,5 +142,5 @@ async def connections(client,message):
         await message.reply_text(
             "Your connected group details ;\n\n",
             reply_markup=InlineKeyboardMarkup(buttons),
-            quote=True
+            quote=True,
         )

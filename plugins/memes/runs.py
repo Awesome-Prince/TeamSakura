@@ -1,8 +1,9 @@
 import random
+
 from pyrogram import Client, filters
+
 from info import COMMAND_HAND_LER
 from plugins.helper_functions.cust_p_filters import f_onw_fliter
-
 
 RUN_STRINGS = (
     "ഇരുട്ട് നിറഞ്ഞ എന്റെ ഈ ജീവിതത്തിലേക്ക് ഒരു തകർച്ചയെ \
@@ -36,16 +37,13 @@ RUN_STRINGS = (
     "നാലാമത്തെ പെഗ്ഗിൽ ഐസ്‌ക്യൂബ്സ് വീഴുന്നതിനു മുൻപ് ഞാൻ അവിടെ എത്തും.....",
     "അവളെ ഓർത്ത് കുടിച്ച കല്ലും നനഞ്ഞ മഴയും വേസ്റ്റ്....",
     "എന്നോട് പറ ഐ ലവ് യൂ ന്ന്....",
-    "അല്ല ഇതാര് വാര്യംപിള്ളിയിലെ മീനാക്ഷി അല്ലയോ... എന്താ മോളെ സ്കൂട്ടറില്.... "
+    "അല്ല ഇതാര് വാര്യംപിള്ളിയിലെ മീനാക്ഷി അല്ലയോ... എന്താ മോളെ സ്കൂട്ടറില്.... ",
 )
 
 
-@Client.on_message(
-    filters.command("runs", COMMAND_HAND_LER) &
-    f_onw_fliter
-)
+@Client.on_message(filters.command("runs", COMMAND_HAND_LER) & f_onw_fliter)
 async def runs(_, message):
-    """ /runs strings """
+    """/runs strings"""
     effective_string = random.choice(RUN_STRINGS)
     if message.reply_to_message:
         await message.reply_to_message.reply_text(effective_string)

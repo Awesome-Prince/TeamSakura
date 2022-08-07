@@ -1,19 +1,16 @@
-import os
-import re
 import json
-import aiohttp
-import requests
+import os
 
+import requests
 from pyrogram import Client, filters
 
-
-#Headers
+# Headers
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36",
     "content-type": "application/json",
 }
 
-#Pastebins
+# Pastebins
 async def p_paste(message, extension=None):
     siteurl = "https://pasty.lus.pm/api/v1/pastes"
     data = {"content": message}
@@ -52,15 +49,11 @@ async def pasty(client, message):
             os.remove(file)
         elif message.reply_to_message.text:
             message_s = message.reply_to_message.text
-    
+
     ext = "py"
     x = await p_paste(message_s, ext)
     p_link = x["url"]
     p_raw = x["raw"]
-    
+
     pasted = f"**𝖲𝗎𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒 𝗉𝖺𝗌𝗍𝖾𝖽 𝗍𝗈 𝗉𝖺𝗌𝗍𝖾 𝖻𝗂𝗇**\n\n**𝖫𝗂𝗇𝗄:** • [𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾]({p_link})\n\n**𝖱𝖺𝗐 𝖫𝗂𝗇𝗄:** • [𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾]({p_raw})"
     await pablo.edit(pasted, disable_web_page_preview=True)
-
-
-
-

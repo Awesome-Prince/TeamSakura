@@ -1,14 +1,15 @@
 # @PaulWalker_TG
 
-import os
 import requests
-from requests.utils import requote_uri
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from requests.utils import requote_uri
 
 API = "https://api.sumanjay.cf/covid/?country="
 
-BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇs', url='https://t.me/SakuraBotUpdates')]])
+BUTTONS = InlineKeyboardMarkup(
+    [[InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/SakuraBotUpdates")]]
+)
 
 
 @Client.on_message(filters.command("covid"))
@@ -19,7 +20,7 @@ async def reply_info(bot, update):
         text=covid_info(query),
         disable_web_page_preview=True,
         quote=True,
-        reply_markup=reply_markup
+        reply_markup=reply_markup,
     )
 
 
@@ -27,15 +28,15 @@ def covid_info(country_name):
     try:
         r = requests.get(API + requote_uri(country_name.lower()))
         info = r.json()
-        country = info['country'].capitalize()
-        active = info['active']
-        confirmed = info['confirmed']
-        deaths = info['deaths']
-        info_id = info['id']
-        last_update = info['last_update']
-        latitude = info['latitude']
-        longitude = info['longitude']
-        recovered = info['recovered']
+        country = info["country"].capitalize()
+        active = info["active"]
+        confirmed = info["confirmed"]
+        deaths = info["deaths"]
+        info_id = info["id"]
+        last_update = info["last_update"]
+        latitude = info["latitude"]
+        longitude = info["longitude"]
+        recovered = info["recovered"]
         covid_info = f"""--**Covid 19 Information**--
 
 Country : `{country}`
@@ -52,4 +53,3 @@ Made by @SakuraBotUpdates ❤️"""
         return covid_info
     except Exception as error:
         return error
-

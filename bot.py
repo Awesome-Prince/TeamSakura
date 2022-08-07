@@ -2,18 +2,19 @@ import logging
 import logging.config
 
 # Get logging configurations
-logging.config.fileConfig('logging.conf')
+logging.config.fileConfig("logging.conf")
 logging.getLogger().setLevel(logging.ERROR)
 
 from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
+
 from database.ia_filterdb import Media
 from database.users_chats_db import db
-from info import SESSION, API_ID, API_HASH, BOT_TOKEN, WARN_DATA_ID, WARN_SETTINGS_ID
+from info import API_HASH, API_ID, BOT_TOKEN, SESSION
 from utils import temp
 
-class Bot(Client):
 
+class Bot(Client):
     def __init__(self):
         super().__init__(
             session_name=SESSION,
@@ -34,8 +35,10 @@ class Bot(Client):
         me = await self.get_me()
         temp.ME = me.id
         temp.U_NAME = me.username
-        self.username = '@' + me.username
-        print(f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) started on {me.username}.")        
+        self.username = "@" + me.username
+        print(
+            f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) started on {me.username}."
+        )
 
     async def stop(self, *args):
         await super().stop()

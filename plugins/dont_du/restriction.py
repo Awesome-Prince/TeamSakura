@@ -1,10 +1,6 @@
-from pyrogram import (
-    Client,
-    filters
-)
-from pyrogram.types import (
-    ChatPermissions
-)
+from pyrogram import Client, filters
+from pyrogram.types import ChatPermissions
+
 from info import COMMAND_HAND_LER
 from plugins.helper_functions.admin_check import admin_check
 from plugins.helper_functions.extract_user import extract_user
@@ -21,21 +17,13 @@ async def mute_user(_, message):
 
     try:
         await message.chat.restrict_member(
-            user_id=user_id,
-            permissions=ChatPermissions(
-            )
+            user_id=user_id, permissions=ChatPermissions()
         )
     except Exception as error:
-        await message.reply_text(
-            str(error)
-        )
+        await message.reply_text(str(error))
     else:
         if str(user_id).lower().startswith("@"):
-            await message.reply_text(
-                "👍🏻 "
-                f"{user_first_name}"
-                "Shut Your Mouth! 🤬"
-            )
+            await message.reply_text("👍🏻 " f"{user_first_name}" "Shut Your Mouth! 🤬")
         else:
             await message.reply_text(
                 "👍🏻 "
@@ -60,10 +48,7 @@ async def temp_mute_user(_, message):
     until_date_val = extract_time(message.command[1])
     if until_date_val is None:
         await message.reply_text(
-            (
-                "Invalid time type specified. "
-                "Expected m, h, or d, Got: {}"
-            ).format(
+            ("Invalid time type specified. " "Expected m, h, or d, Got: {}").format(
                 message.command[1][-1]
             )
         )
@@ -71,15 +56,10 @@ async def temp_mute_user(_, message):
 
     try:
         await message.chat.restrict_member(
-            user_id=user_id,
-            permissions=ChatPermissions(
-            ),
-            until_date=until_date_val
+            user_id=user_id, permissions=ChatPermissions(), until_date=until_date_val
         )
     except Exception as error:
-        await message.reply_text(
-            str(error)
-        )
+        await message.reply_text(str(error))
     else:
         if str(user_id).lower().startswith("@"):
             await message.reply_text(

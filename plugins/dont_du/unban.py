@@ -1,4 +1,5 @@
 from pyrogram import Client, filters
+
 from info import COMMAND_HAND_LER
 from plugins.helper_functions.admin_check import admin_check
 from plugins.helper_functions.extract_user import extract_user
@@ -13,13 +14,9 @@ async def un_ban_user(_, message):
     user_id, user_first_name = extract_user(message)
 
     try:
-        await message.chat.unban_member(
-            user_id=user_id
-        )
+        await message.chat.unban_member(user_id=user_id)
     except Exception as error:
-        await message.reply_text(
-            str(error)
-        )
+        await message.reply_text(str(error))
     else:
         if str(user_id).lower().startswith("@"):
             await message.reply_text(
